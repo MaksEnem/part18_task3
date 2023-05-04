@@ -6,8 +6,7 @@ int count(int k, int n) {
 
         return 1;
 
-    }
-        
+    }        
 
     int n_count = 0;
 
@@ -15,17 +14,20 @@ int count(int k, int n) {
 
         n_count += count(k, n - i);
 
-    }
-
-       
+    }         
 
     return n_count;
 }
 int main() {
 
-    int jump = 2;
-    int step_length = 3;
+    int jump;
+    int step_length;
     
+    std::cout << "Enter max length jump: ";
+    std::cin >> jump;
+
+    std::cout << "Enter the maximum number of steps: ";
+    std::cin >> step_length;
 
     std::cout << count(jump, step_length);
 

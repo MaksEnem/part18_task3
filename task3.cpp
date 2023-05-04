@@ -1,40 +1,34 @@
 #include <iostream>
 
-void varik(int new_place, int var) {
+int count(int k, int n) {
 
-	int L = 7;
-	int R = 2;
+    if (n == 0) {
 
-	if ((new_place < 0) || (new_place > L)) {
+        return 1;
 
-		return;
+    }
+        
 
-	}
-	if (new_place == L) {
+    int n_count = 0;
 
-		var++;
+    for (int i = 1; i <= n; ++i) {
 
-	}
+        n_count += count(k, n - i);
 
-	for (int i = 1; i <= R; ++i) {
+    }
 
-		varik(new_place + i, var);
+       
 
-	}
-	std::cout << var << " ";
+    return n_count;
 }
+int main() {
+
+    int jump = 2;
+    int step_length = 3;
+    
+
+    std::cout << count(jump, step_length);
 
 
-
-
-int main()
-{
-
-
-	
-	int new_place = 0;
-	int var = 0;
-
-	varik(new_place, var);
-	
+    return 0;
 }
